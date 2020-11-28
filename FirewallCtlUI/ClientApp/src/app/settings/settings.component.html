@@ -1,0 +1,10 @@
+<h1>Settings</h1>
+
+<p>This is a simple example of an Angular component.</p>
+<select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="Settings.device">
+  <option *ngFor="let opt of CaptureDevices" [value]="opt.Name">{{opt.description}}</option>
+</select>
+
+<p aria-live="polite"><input [(ngModel)]="Settings.device"></p>
+
+<button class="btn btn-primary" (click)="save()">Save</button>
