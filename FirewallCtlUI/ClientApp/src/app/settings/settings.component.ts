@@ -22,4 +22,17 @@ export class SettingsComponent {
   public save() {
     this.api.saveSettings(this.Settings);
   }
+
+  public addNetwork() {
+    this.Settings.myNetworks.push('');
+  }
+
+  public removeNetwork(item: string) {
+    this.Settings.myNetworks = this.Settings.myNetworks.filter(e => e !== item);
+  }
+
+
+  indexTracker(index: number, value: any) {
+    return index;
+  }
 }

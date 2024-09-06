@@ -15,6 +15,7 @@ namespace CodeGenerator
             {
                 x.For(type);
             }
+            x.WithMemberFormatter((identifier) => Char.ToLower(identifier.Name[0]) + identifier.Name.Substring(1));
             File.WriteAllText(args[0], x.Generate());
         }
     }

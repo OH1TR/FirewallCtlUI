@@ -57,6 +57,7 @@ namespace FirewallCtlUI.Controllers
             s.Value = JsonConvert.SerializeObject(settings);
             _context.SaveChanges();
             _captureService.SetDevice(settings.Device);
+            _captureService.SetMyNetworks(settings.MyNetworks);
             return Ok();
         }
     }

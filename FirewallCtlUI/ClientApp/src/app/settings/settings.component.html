@@ -1,10 +1,17 @@
 <h1>Settings</h1>
 
-<p>This is a simple example of an Angular component.</p>
+<p>Select your capture inteface</p>
 <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="Settings.device">
-  <option *ngFor="let opt of CaptureDevices" [value]="opt.Name">{{opt.description}}</option>
+  <option *ngFor="let opt of CaptureDevices" [value]="opt.name">{{opt.description}}</option>
 </select>
-
-<p aria-live="polite"><input [(ngModel)]="Settings.device"></p>
-
-<button class="btn btn-primary" (click)="save()">Save</button>
+<br/>
+<p>Your own networks</p>
+<p *ngFor="let opt of Settings.myNetworks; let i = index; trackBy:indexTracker">
+  <input [(ngModel)]="Settings.myNetworks[i]"><button class="btn btn-secondary" (click)="removeNetwork(opt)">Remove</button>
+</p>
+<p>
+  <button class="btn btn-secondary" (click)="addNetwork()">Add network</button>
+</p>
+<p>
+  <button class="btn btn-primary" (click)="save()">Save</button>
+</p>

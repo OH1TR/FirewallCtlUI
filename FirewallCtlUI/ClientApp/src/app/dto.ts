@@ -1,11 +1,11 @@
 
 declare namespace FirewallCtlUI.DTO {
 	interface CaptureDevice {
-		Description: string;
-		Name: string;
+		description: string;
+		name: string;
 	}
 	interface Settings {
-		Device: string;
-		MyNetworks: string[];
+		device: string;
+		myNetworks: string[];
 	}
 }
